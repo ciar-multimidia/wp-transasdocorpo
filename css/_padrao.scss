@@ -1,0 +1,282 @@
+@import url('//fonts.googleapis.com/css?family=Nunito:400,700|Open+Sans:400,400i,600,600i,700,700i');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+// formatacao
+a {
+	&:link, &:visited, &:active, &:focus {
+		color: $cor4;
+		outline: 0;
+		text-decoration:none;
+		@extend %transicao;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+b, strong {
+	font-weight: bold;
+}
+u {
+	text-decoration: underline;
+}
+i, em {
+	font-style: italic;
+}
+s {
+	text-decoration: line-through;
+}
+// item de delete
+del {
+	display: none
+}
+// paragrafos
+p {
+	margin: 30px 0 0 0;
+}
+
+h2 + p, h3 + p, h4 + p, h5 + p {
+	margin-top: 3px;
+}
+
+small {
+	font-size: 80%;
+}
+
+center {
+	text-align: center;
+}
+
+// titulos
+h1 {font-size: 1.8em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.3em;}
+h4 {font-size: 1.1em;}
+h5 {font-size: 1em;}
+
+h1, h2, h3, h4, h5, h6 {
+	@extend %fonte-destaque;
+	&.block {
+		display: block;
+		width: 100%; float: left; clear: both;
+		font-weight: 600;
+		margin-bottom: 25px;
+	}
+
+	&.upper {@extend %uppercase; letter-spacing: 0.03em; font-weight: 600}
+}
+
+// FORMULARIOS
+input, select, textarea {
+	width: 100%;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	display: block;
+	height: 35px;
+	padding: 8px 12px;
+	outline: 0;
+	font-style: normal;
+	font-size: 0.9em;
+	border: 0;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-webkit-appearance: none;
+	color: $cor2;
+	@extend %fonte-normal;
+
+	&:focus {
+		outline:0;
+	}
+	&[type=submit] {
+		cursor: pointer;
+	}
+
+	article & {
+		border: 1px solid $cor3
+	}
+}
+
+textarea {height: 210px}
+
+input[type=checkbox] {
+	width: 20px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+textarea {
+	height: 200px;
+}
+
+// BUSCA 
+.busca form {
+	@extend %posrel;
+
+	input[type=search] {padding-right: 40px}
+
+	&:after {
+		content: "\f002";
+		@extend %fonte-icones, %posabs;
+		top: 5px;
+	    right: 12px;
+	}
+}
+
+// esconder
+.hidden {display: none;}
+
+// botao grande
+a.btn-block {
+	width: 100%; float: left; clear: both;
+	text-align: center; display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	overflow: hidden;
+	color: $cor2;
+
+	span {
+		display: inline-block;
+		padding: 10px 20px;
+		border: 2px solid $cor3;
+		border-radius: 8px;
+		@extend %posrel, %transicao;
+
+		&:before, &:after {
+			content: "";
+			width: 600px;
+			height: 2px;
+			background: lighten($cor2, 50%);
+			@extend %posabs;
+			top: calc(50% - 1px);
+		}
+
+		&:before {left: -620px;}
+		&:after {right: -620px;}
+
+		&:hover {
+			color: $fundo;
+			background: $cor3;
+		}
+	}
+}
+
+a.btn {
+	display: inline-block;
+	padding: 7px 14px;
+	border: 2px solid $cor3;
+	border-radius: 8px;
+	color: $cor2;
+
+	&:hover {
+		color: $fundo;
+		background: $cor3;
+		text-decoration: none;
+	}
+
+	&.small {
+		font-size: 0.8em;
+	}
+}
+
+// fix
+.fix {@extend %fix;}
+
+
+// table
+table {
+	width: 100%; margin: 25px 0 0 0;
+
+	tr th, tr td {padding: 10px; border: 1px solid lighten($cor2, 35%);}
+
+	tr th {
+		background: lighten($cor2, 50%);
+		text-align: left;
+		font-weight: bold;
+	}
+}
+
+
+// video
+.video {
+	padding-bottom: 54.86%;
+	padding-top: 30px;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	iframe, object, embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding-bottom: 2.5%
+	}
+}
+
+
+
+// classes padrao
+%fonte-normal {font-family:'Open Sans',sans-serif}
+%fonte-destaque {font-family:'Nunito',sans-serif}
+%fonte-icones {font-family:'FontAwesome'}
+
+.container {
+	margin: 0 auto;
+	padding: 0 10px;
+	display: block;
+	@extend %posrel;
+}
+
+%posabs {position: absolute;}
+%posrel {position: relative;}
+%posfix {position: fixed;}
+
+%transicao {@include transition(all 0.32s ease-in-out);}
+
+%letterspacing {letter-spacing: 0.1em;}
+%uppercase {text-transform: uppercase;}
+
+%fix {
+    &:before, &:after {
+    content: "";
+    display: table;
+    }
+    &:after {clear: both;}
+}
+
+
+/****************************************
+ ----------------------------------------
+ * PADRAO WORDPRESS *
+ ----------------------------------------
+ ****************************************/
+
+.alignnone, a img.alignnone {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.aligncenter, a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.alignright, a img.alignright {
+    float:right;
+    margin-top: 5px;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.alignleft, a img.alignleft {
+    float: left;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 20px;
+}

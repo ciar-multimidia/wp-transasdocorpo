@@ -1,0 +1,156 @@
+$fundo: #FFFFFF;
+
+$cor1: #FFFFFF;
+$cor2: #666666;
+$cor3: #EBAF4F;
+$cor4: #70164A;
+
+$cor5: #748c64;
+$cor6: #586893;
+$cor7: #579191;
+$cor8: #916a57;
+$cor9: #9e4949;
+$cor10: #8E6389;
+$cor11: #8E4D5A;
+
+@import 'bourbon/bourbon';
+@import 'reset';
+@import 'padrao';
+@import 'galeria';
+@import 'fancybox';
+
+body {
+	background: $fundo;
+	font-size: 16px;
+	line-height: 1.6;
+	color: $cor2;
+	@extend %fonte-normal;
+}
+
+@import 'canvas';
+@import 'lay-topo';
+@import 'lay-home-conteudo';
+@import 'lay-home-chamadas';
+@import 'lay-colunas';
+@import 'lay-single';
+
+
+.lista-evento {
+	list-style-type: none;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(space-between);  
+    border: 2px solid $cor3;
+    border-top-width: 0;
+    padding: 10px;
+
+    &:first-of-type{border-top-width: 2px}
+
+	.data {
+		width: 60px;
+		@extend %fonte-destaque;
+		font-size: 0.9em;
+		font-weight: bold;
+
+		span, a {
+			display: block;
+		    font-weight: normal;
+		    font-size: 12px;
+		}
+	}
+
+	.titulo {
+		width: calc(100% - 70px);
+		display: block;
+	}
+}
+
+
+.paginacao {
+	width: 100%; float: left; clear: both;
+	text-align: center;
+	margin: 50px 0 0;
+	@extend %fonte-destaque;
+
+
+
+	a, span {
+		display: inline-block;
+		margin: 0 8px 8px;
+		width: 38px;
+		height: 38px;
+		border: 2px solid $cor3;
+		background: $fundo;
+		border-radius: 50%;
+		line-height: 34px;
+		font-weight: 600;
+		@extend %transicao;
+
+		&.inactive, &:hover:not(span) {
+			background: $cor3;
+			color: $fundo;
+			text-decoration: none;
+		}
+	}
+
+	.inicio {
+		font-size: 11px;
+		@extend %uppercase;
+		border: none;
+		border-radius: 0;
+		width: 100%;
+		display: block;
+		background: none;
+	}
+}
+
+
+
+// transas responde
+#area-form-askme {
+	margin: 40px 0;
+}
+
+.alert {
+	background: #f9f9f9;
+	border-radius: 5px;
+	padding: 20px;
+	width: 100%;
+	display: block;
+
+	&.danger {color: red}
+	&.success {color: green}
+}
+
+.pergunta {
+	margin: 20px 0 0 0;
+	padding: 20px 0 0 0;
+	border-top: 2px solid $cor3;
+	cursor: pointer;
+	@extend %transicao;
+
+	&:before {
+		content: "\f105";
+		@extend %fonte-icones, %transicao;
+		display: inline-block;
+		color: lighten($cor4,20%);
+		margin-right: 5px;
+	    font-size: 1.35em;
+	    line-height: 1.2;
+	    width: 18px;
+	    vertical-align: bottom;
+	}
+
+	&:hover:before, &.ativo:before {
+		content: "\f107";
+	}
+}
+.resposta {
+	margin: 0;
+	font-size: 0.9em;
+	display: none;
+}
+
+@import 'lay-rodape';
+@import 'responsivo';

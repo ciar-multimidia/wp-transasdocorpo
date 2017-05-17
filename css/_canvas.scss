@@ -1,0 +1,95 @@
+// interface do canvas
+.canvas-overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparentize(#000, 0.5);
+	display: none;
+	z-index: 1000;
+	opacity: 0;
+	@include transition(opacity 0.32s);
+	&.db{
+		display: block;
+	}
+	&.visivel {
+		opacity: 1;
+	}
+}
+.canvas {
+	background-color: #333;
+	background: #333;
+	padding: 10px;
+	border: 0;
+	height: 100vh;
+	width: 240px;
+	position: fixed;
+	z-index: 1001;
+	@extend %transicao;
+	display: none;
+	@include transform(translateX(-100%));
+	overflow: auto;
+
+	&.db{
+		display: block;
+	}
+
+	&.visivel {
+		@include transform(translateX(0px));
+	}
+
+	h5 {
+		color: rgba(255, 255, 255, 0.5);
+		width: 220px;
+		font-size: 1.1em;
+		margin: 0 0 15px;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		padding: 0 0 15px;
+	}
+
+	& > ul {
+
+		& > li {
+			padding: 5px 0;
+		}
+	}
+	ul {
+		li {
+			color: #FFF;
+			font-size: 12px;
+			@extend %uppercase, %letterspacing;
+
+			a {color: inherit}
+		}
+		ul li {
+			padding: 5px 10px;
+			font-size: 11px;
+
+			&:nth-of-type(1) {
+				padding-top: 10px
+			}
+			&:before {
+				content: "-";
+				margin-right: 5px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+
+
+	.busca {
+		width: 220px;
+		margin: 20px auto 0;
+		border-top: 1px solid rgba(0,0,0,0.2);
+		padding: 20px 0 0 0;
+
+		form {
+			input {
+				background: #222;
+				border-color: #111;
+			}
+		}
+	}
+}
