@@ -19,6 +19,22 @@
 
 </main>
 
+
+<section id="area-abertura">
+	<div class="fundo"></div>
+	<div class="conteudo-abertura">
+	    <div id="item-abertura">
+	        <div class="anos">
+	            <span>30</span>anos
+	        </div>
+	        <div class="nome">Grupo Transas do Corpo</div>
+	        <div class="faixa um"><span>Ações educativas em gênero,</span></div>
+	        <div class="faixa dois"><span>saúde e sexualidade.</span></div>
+	    </div>
+	</div>	
+</section>
+
+
 <?php wp_footer(); ?>
 </body>
 </html>

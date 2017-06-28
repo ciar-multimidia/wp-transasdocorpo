@@ -24,7 +24,7 @@
 					<h3>Ações</h3>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/producoes">Formações Feministas</a></li>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/pesquisas">Pesquisas</a></li>
-					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/ongs">Mapeamento de ONGs</a></li>
+					<?php /* ?><li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/ongs">Mapeamento de ONGs</a></li><?php */ ?>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/acoes/transas-responde/">Transas Responde</a></li>
 				</div>
 			</div>

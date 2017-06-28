@@ -23,7 +23,7 @@
 				<div class="box">
 					<h3>Biblioteca</h3>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/artigos">Artigos</a></li>
-					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/publicacoes">Publicacoes</a></li>
+					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/publicacoes">Publicações</a></li>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/filmes">Filmes</a></li>
 					<li class="lista-evento"><a href="<?php bloginfo('url'); ?>/index.php/informativos">Informativo Fazendo Gênero</a></li>
 				</div>

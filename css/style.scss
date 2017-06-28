@@ -26,6 +26,7 @@ body {
 	color: $cor2;
 	@extend %fonte-normal;
 }
+@import 'lay-abertura';
 
 @import 'canvas';
 @import 'lay-topo';
