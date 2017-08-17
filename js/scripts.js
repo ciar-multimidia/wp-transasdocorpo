@@ -7,9 +7,41 @@ jQuery(document).ready(function() {
 				type: 'inside'
 			}
 		}
-	}); 
+	});
 
-	console.log(jQuery(".col-aside"));
+	// código da tela de abertura
+	if (localStorage.getItem('jaViuAbertura') === 'true') {
+
+	} else{
+		var corpo = jQuery('body');
+		var abertura = jQuery('#area-abertura');
+		corpo.addClass('body-abertura');
+		abertura.removeClass('dn');
+
+		var fecharAbertura = function(){
+			localStorage.setItem('jaViuAbertura', 'true');
+			abertura
+			.animate(
+				{'opacity': '0'},
+				500, function() {
+					corpo.removeClass('body-abertura');
+					abertura.remove();
+			});
+		}
+
+		var tempoFechar = 7000;
+		var timeOutFechar = setTimeout(function(){
+			fecharAbertura();
+		}, tempoFechar);
+
+		abertura.on('click', function(event) {
+			fecharAbertura();
+			clearInterval(timeOutFechar);
+		});
+	}
+
+
+
     if ( !(jQuery(".col-aside").length > 0) ) {
         jQuery(".col-conteudo").addClass("full");
     }
@@ -30,7 +62,7 @@ jQuery(document).ready(function() {
     jQuery('main').off('mousedown', escondeSidebar);
     jQuery('.canvas').off('swipeleft', escondeSidebar);
     jQuery('.canvas-overlay').removeClass('visivel');
-    console.log('escondeu');
+  
   }
 
   function mostraSidebar() {

@@ -4,7 +4,7 @@
 	<title><?php wp_title('&#9666; ', true, 'right'); ?><?php bloginfo('name'); ?></title>
 	<?php get_template_part('inc/head'); ?>
 </head>
-<body <?php body_class('body-abertura'); ?>>
+<body <?php body_class(''); ?>>
 
 <nav class="canvas">
 	<h5>Navegação</h5>

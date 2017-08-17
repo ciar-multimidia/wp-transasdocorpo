@@ -20,7 +20,7 @@
 </main>
 
 
-<section id="area-abertura">
+<section id="area-abertura" class="dn">
 	<div class="fundo"></div>
 	<div class="conteudo-abertura">
 	    <div id="item-abertura">
