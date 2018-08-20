@@ -49,7 +49,7 @@ require_once(get_template_directory().'/func/customizador.php' );
 function manipula_menus(){
 
   $user_id = get_current_user_id();
-  if ( $user_id !== 2) {
+  if ( $user_id == 1) {
     remove_menu_page( 'edit.php' );
     remove_menu_page( 'upload.php' );
     remove_menu_page( 'edit.php?post_type=page' );
